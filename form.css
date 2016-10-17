@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors gabi (you@example.org)
+ * @date    2016-10-17 10:54:06
+ * @version $Id$
+ */
+body {
+	font-family: monospace, arial;
+}
+
+.container {
+	max-width: 380px;
+	margin: 50px auto;
+}
+.ui-form {
+	position: relative;
+	padding: 15px 10px 10px;
+	border-bottom: 1px solid #ddd;
+}
+.ui-label {
+	display: block;
+	position: absolute;
+	top: 15px;
+	font-size: 12px;
+	color: #414b56;
+	transition: transform 1s;
+}
+.ui-form.ui-slideup .ui-label {
+	transform: translateY(-15px);
+}
+.ui-field {
+	display: block;
+	width: 100%;
+	appearance: none;
+	-webkit-appearace: none;
+	border-radius: 0;
+	border: 0;
+	outline: none;
+}
