@@ -11,24 +11,26 @@
 	<div class="container">
 		<div class="ui-form-wrap">
 			<div class="ui-form">
-				<label class="ui-label">Email</label>
-				<input class="ui-field" type="" name="">
+				<label class="ui-label" for="email">Email</label>
+				<input class="ui-field" id="email" type="text" name="">
 			</div>
 			<div class="ui-tips"></div>
 		</div>
 		<div class="ui-form-wrap">
 			<div class="ui-form">
-				<label class="ui-label">Create password</label>
-				<input class="ui-field" type="" name="">
+				<label class="ui-label" for="password">Create password</label>
+				<input class="ui-field" id="password" type="text" name="">
 			</div>
 		</div>
 	</div>
 	<script src="jquery.min.js"></script>
-	<script src="form.js">
+	<script src="form.js"></script>
+	<script>
 		$(document).ready(function() {
 
 			$('.ui-form').uiForm({
-				
+				activeClass: 'active',
+				filledClass: 'filled'
 			});
 
 		});
