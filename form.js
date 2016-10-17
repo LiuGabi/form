@@ -17,7 +17,9 @@
 					return;
 				}
 
-				if (!$(els).val()) {
+				var empty = $(els).val();
+
+				if (empty.length == 0) {
 
 					$(els).removeClass(opts.filledClass)
 					return true;
@@ -37,9 +39,9 @@
 					return;
 				}
 
-				var activeClass = $(els).is(opts.activeClass);
+				var active= $(els).is(opts.activeClass);
 
-				if (!activeClass) {
+				if (!active) {
 
 					return false;
 
@@ -60,6 +62,11 @@
 				e.stopPropagation();
 
 				$(this).parent().siblings().children('.' + opts.activeClass).removeClass(opts.activeClass);
+
+				if(form.isEmpty(this)) {
+					console.log("gg");
+				}
+
 				$(this).addClass(opts.activeClass);
 
 			});

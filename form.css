@@ -31,6 +31,9 @@ body {
 .ui-form.active .ui-label {
 	transform: translateY(-15px);
 }
+.ui-form.filled {
+	color: #00f;
+}
 .ui-field {
 	display: block;
 	width: 100%;
