@@ -29,9 +29,12 @@ body {
 	transition: transform 0.5s;
 }
 .ui-form.active .ui-label {
+	color: #03A9F4;
+}
+.ui-form.up .ui-label {
 	transform: translateY(-15px);
 }
-.ui-form.filled {
+.ui-form.empty {
 	color: #00f;
 }
 .ui-field {

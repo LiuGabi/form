@@ -22,6 +22,11 @@
 				<input class="ui-field" id="password" type="text" name="">
 			</div>
 		</div>
+
+		<div>
+			<button>Submit</button>
+		</div>
+
 	</div>
 	<script src="jquery.min.js"></script>
 	<script src="form.js"></script>
@@ -30,7 +35,10 @@
 
 			$('.ui-form').uiForm({
 				activeClass: 'active',
-				filledClass: 'filled'
+				labelUpClass: 'up',
+				formClass: 'ui-form',
+				fieldClass: 'ui-field',
+				formWrap: 'ui-form-wrap'
 			});
 
 		});

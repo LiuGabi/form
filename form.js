@@ -9,65 +9,21 @@
 
 		var parent = $(this);
 
-		var form = {
-
-			isEmpty: function(els) {
-
-				if (!els) {
-					return;
-				}
-
-				var empty = $(els).val();
-
-				if (empty.length == 0) {
-
-					$(els).removeClass(opts.filledClass)
-					return true;
-
-				} else {
-
-					$(els).addClass(opts.filledClass)
-					return false;
-
-				}
-
-			},
-
-			isActive: function(els) {
-
-				if (!els) {
-					return;
-				}
-
-				var active= $(els).is(opts.activeClass);
-
-				if (!active) {
-
-					return false;
-
-				} else {
-
-					return true;
-
-				}
-
-			}
-
-		};
-
 		var init = function() {
 
 			parent.on('click touchstart', function(e) {
 
 				e.stopPropagation();
 
+				$(this).addClass(opts.activeClass);
+				$(this).addClass(opts.labelUpClass);
+
+
 				$(this).parent().siblings().children('.' + opts.activeClass).removeClass(opts.activeClass);
 
-				if(form.isEmpty(this)) {
-					console.log("gg");
-				}
-
-				$(this).addClass(opts.activeClass);
+				
+				var arr = $(this).parent().siblings().children('.' + opts.formClass);
+				arrEach(arr);
 
 			});
 
@@ -76,9 +32,53 @@
 				e.stopPropagation();
 				parent.removeClass(opts.activeClass);
 
+				var arr = parent;
+
+				arrEach(arr);
+				
+
 			});
 
 		};
+
+		var arrEach = function(arr) {
+
+			console.log(arr.length);
+
+			// if (arr.constructor === Array) {
+
+				for(var i = 0; i < arr.length; i++) {
+
+					var value = $(arr[i]).children('.' + opts.fieldClass).val();
+
+					if(value == 0) {
+
+						$(arr[i]).removeClass(opts.labelUpClass);
+
+					}
+				}
+
+			}			
+
+		}
+
+		var event = {
+
+			click: function() {
+
+			},
+
+			submit: function() {
+
+			},
+
+			success: function() {
+
+			}
+
+		}
+
+		
 
 		init();
 
