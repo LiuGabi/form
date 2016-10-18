@@ -23,7 +23,14 @@
 
 				
 				var arr = $(this).parent().siblings().children('.' + opts.formClass);
-				arrEach(arr);
+				arr.each(function() {
+
+					var value = $(this).children('.' + opts.fieldClass).val();
+					if(value == 0) {
+						$(this).removeClass(opts.labelUpClass);
+					}
+
+				});
 
 			});
 
@@ -33,34 +40,19 @@
 				parent.removeClass(opts.activeClass);
 
 				var arr = parent;
+				arr.each(function() {
 
-				arrEach(arr);
+					var value = $(this).children('.' + opts.fieldClass).val();
+					if(value == 0) {
+						$(this).removeClass(opts.labelUpClass);
+					}
+
+				});
 				
 
 			});
 
 		};
-
-		var arrEach = function(arr) {
-
-			console.log(arr.length);
-
-			// if (arr.constructor === Array) {
-
-				for(var i = 0; i < arr.length; i++) {
-
-					var value = $(arr[i]).children('.' + opts.fieldClass).val();
-
-					if(value == 0) {
-
-						$(arr[i]).removeClass(opts.labelUpClass);
-
-					}
-				}
-
-			}			
-
-		}
 
 		var event = {
 
